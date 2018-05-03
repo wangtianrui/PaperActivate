@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ActivatePaper</string>
+    <string name="app_name">纸悦动</string>
     <string name="login_success">login success</string>
     <string name="login">登录</string>
     <string name="Username">帐号</string>
