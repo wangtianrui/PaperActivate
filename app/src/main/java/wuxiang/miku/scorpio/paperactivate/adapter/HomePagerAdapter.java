@@ -29,6 +29,12 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
                 case 0:
                     fragments[position] = ActivaterFragment.newInstance();
                     break;
+                case 1:
+                    fragments[position] = ActivaterFragment.newInstance();
+                    break;
+                case 2:
+                    fragments[position] = ActivaterFragment.newInstance();
+                    break;
                 default:
                     break;
             }

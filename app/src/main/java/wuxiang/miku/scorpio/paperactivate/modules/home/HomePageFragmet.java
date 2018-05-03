@@ -116,6 +116,7 @@ public class HomePageFragmet extends BaseFragment {
      * 初始化searchview
      */
     private void initSearchView() {
+        searchView.setHint("搜索");
         searchView.setVoiceSearch(false);
         searchView.setCursorDrawable(R.drawable.custom_cursor);
         searchView.setEllipsize(true);
@@ -142,6 +143,6 @@ public class HomePageFragmet extends BaseFragment {
         viewPager.setOffscreenPageLimit(1);
         viewPager.setAdapter(mHomeAdapter);
         slidingTabs.setViewPager(viewPager);
-        viewPager.setCurrentItem(0);
+        viewPager.setCurrentItem(1);
     }
 }

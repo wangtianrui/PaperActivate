@@ -2,6 +2,8 @@
 <resources>
     <string-array name="sections">
         <item>悦动</item>
+        <item>测试</item>
+        <item>测试</item>
     </string-array>
     <string-array name="query_suggestions">
         <item>我们的习大大</item>
