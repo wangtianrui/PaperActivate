@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import wuxiang.miku.scorpio.paperactivate.R;
-import wuxiang.miku.scorpio.paperactivate.modules.home.activater.ActivaterFragment;
+import wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.center.CenterFragment;
 
 /**
  * Created by Wangtianrui on 2018/5/1.
@@ -27,13 +27,13 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
         if (fragments[position] == null) {
             switch (position) {
                 case 0:
-                    fragments[position] = ActivaterFragment.newInstance();
+                    fragments[position] = CenterFragment.newInstance();
                     break;
                 case 1:
-                    fragments[position] = ActivaterFragment.newInstance();
+                    fragments[position] = CenterFragment.newInstance();
                     break;
                 case 2:
-                    fragments[position] = ActivaterFragment.newInstance();
+                    fragments[position] = CenterFragment.newInstance();
                     break;
                 default:
                     break;
