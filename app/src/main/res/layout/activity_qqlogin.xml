@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="wuxiang.miku.scorpio.paperactivate.modules.login_register.QQLoginActivity">
+
+    <TextView
+        android:layout_weight="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/img_qq_user_head"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pic_qq_login"
+        android:scaleType="center"/>
+
+    <TextView
+        android:id="@+id/text_qq_user_name"
+        android:layout_weight="0.1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/qquser_name"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_qq_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/qqlogin"
+            android:backgroundTint="@color/qq"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/button_qq_logout"
+            android:layout_below="@+id/button_qq_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/qqlogout"
+            android:backgroundTint="@color/qq"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

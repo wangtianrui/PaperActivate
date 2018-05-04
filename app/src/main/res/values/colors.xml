@@ -63,4 +63,6 @@
     <color name="navigation_subtitle_primary_text">#FFFFFFFF</color>
     <color name="navigation_subtitle_secondary_text">#BFFFFFFF</color>
 
+    <color name="qq">#0095ff</color>
+
 </resources>

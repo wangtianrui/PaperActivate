@@ -10,5 +10,8 @@
     <string name="next">立即注册</string>
     <string name="register">注册</string>
     <string name="otheraccountlogin"><u>使用其他社交帐号登录</u></string>
+    <string name="qqlogin">登陆</string>
+    <string name="qqlogout">退出</string>
+    <string name="qquser_name">昵称</string>
 
 </resources>

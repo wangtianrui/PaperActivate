@@ -20,42 +20,36 @@ android {
 
 dependencies {
     //创建项目自动生成
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
-
     //logger
     implementation 'com.orhanobut:logger:2.2.0'
-
     //butterknife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     //bmob 3.4.7  (2018/03/21)
     compile 'cn.bmob.android:bmob-sdk:3.4.7-aar'
     compile 'com.android.support:support-v4:26.1.0'
     compile 'cn.bmob.android:http-legacy:1.0'
-
     //login需要的库
     compile 'com.android.support:design:26.1.0'
     compile 'com.android.support:cardview-v7:26.1.0'
-
     //md库
     compile 'com.github.rey5137:material:1.2.4'
     compile 'com.github.rey5137:material:1.2.3.1-SNAPSHOT'
-
     //searchview
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
     //tablayout
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.0@aar'
-
     //leakcanary
-//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
-//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-//    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-//    compile 'com.facebook.stetho:stetho:1.3.1'
-//    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    //    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    //    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //    compile 'com.facebook.stetho:stetho:1.3.1'
+    //    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    implementation files('libs/open_sdk_r5990_lite.jar')
 }
 repositories {
     flatDir {

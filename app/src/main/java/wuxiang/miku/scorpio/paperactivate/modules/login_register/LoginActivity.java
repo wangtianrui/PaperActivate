@@ -113,6 +113,8 @@ public class LoginActivity extends AppCompatActivity {
                 break;
             case R.id.qq_login_button:
                 ToastUtil.showShort(LoginActivity.this,"QQ登录");
+                Intent qqIntent = new Intent( LoginActivity.this , QQLoginActivity.class );
+                startActivity( qqIntent );
                 break;
             case R.id.weixin_login_button:
                 ToastUtil.showShort(LoginActivity.this,"微信登录");
