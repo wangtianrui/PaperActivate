@@ -24,7 +24,7 @@ import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.modules.MainActivity;
 import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.other_account_login_textview)
     TextView otherAccountLoginTextview;
@@ -109,11 +109,16 @@ public class LoginActivity extends AppCompatActivity {
                 otherLoginContext.setVisibility(View.VISIBLE);
                 break;
             case R.id.qq_login_button:
-                ToastUtil.showShort(LoginActivity.this,"QQ登录");
+                ToastUtil.showShort(LoginActivity.this, "QQ登录");
                 break;
             case R.id.weixin_login_button:
-                ToastUtil.showShort(LoginActivity.this,"微信登录");
+                ToastUtil.showShort(LoginActivity.this, "微信登录");
                 break;
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
