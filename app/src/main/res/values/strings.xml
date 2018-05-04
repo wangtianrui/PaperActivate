@@ -9,5 +9,6 @@
     <string name="repeat_password">重复一遍密码</string>
     <string name="next">立即注册</string>
     <string name="register">注册</string>
+    <string name="otheraccountlogin"><u>使用其他社交帐号登录</u></string>
 
 </resources>
