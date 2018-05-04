@@ -48,6 +48,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Explode explode = new Explode();
                 explode.setDuration(500);
+                /**
+                 * 嘻嘻嘻
+                 */
 
                 getWindow().setExitTransition(explode);
                 getWindow().setEnterTransition(explode);
