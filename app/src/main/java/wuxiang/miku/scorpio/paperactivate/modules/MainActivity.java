@@ -24,7 +24,7 @@ import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.base.BaseActivity;
 import wuxiang.miku.scorpio.paperactivate.modules.home.HomePageFragmet;
 
-import wuxiang.miku.scorpio.paperactivate.utils.PreferenceUtil;
+
 import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 import wuxiang.miku.scorpio.paperactivate.widget.CircleImageView;
 
@@ -58,6 +58,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         initFragment();
         initNavigationView();
+
     }
 
     @Override
@@ -67,6 +68,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     /**
      * navigation点击事件处理
+     *
      * @param item
      * @return
      */
@@ -91,6 +93,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         TextView mUserSign = (TextView) headerView.findViewById(R.id.user_other_info);
         ImageView mSwitchMode = (ImageView) headerView.findViewById(R.id.iv_head_switch_mode);
         //设置头像
+//        mSwitchMode.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                switchNightMode();
+//            }
+//        });
         mUserAvatarView.setImageResource(R.drawable.user_avatar_test);
         mUserName.setText("ScorpioMiku");
         mUserSign.setText("积分：900");
