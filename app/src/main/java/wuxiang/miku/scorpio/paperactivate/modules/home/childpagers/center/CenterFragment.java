@@ -1,4 +1,4 @@
-package wuxiang.miku.scorpio.paperactivate.modules.home.activater;
+package wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.center;
 
 import android.os.Bundle;
 
@@ -10,9 +10,9 @@ import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
  * Created by Wangtianrui on 2018/5/1.
  */
 
-public class ActivaterFragment extends BaseFragment {
-    public static ActivaterFragment newInstance() {
-        return new ActivaterFragment();
+public class CenterFragment extends BaseFragment {
+    public static CenterFragment newInstance() {
+        return new CenterFragment();
     }
 
     @Override

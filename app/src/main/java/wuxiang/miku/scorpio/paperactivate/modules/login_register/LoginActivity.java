@@ -13,12 +13,27 @@ import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.modules.MainActivity;
+import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 
 public class LoginActivity extends AppCompatActivity {
 
+    @BindView(R.id.other_account_login_textview)
+    TextView otherAccountLoginTextview;
+    @BindView(R.id.qq_login_button)
+    ImageView qqLoginButton;
+    @BindView(R.id.weixin_login_button)
+    ImageView weixinLoginButton;
+    @BindView(R.id.other_login_context)
+    LinearLayout otherLoginContext;
     private EditText etUsername;
     private EditText etPassword;
     private Button btGo;
@@ -29,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
         initView();
         setListener();
     }
@@ -55,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 getWindow().setExitTransition(explode);
                 getWindow().setEnterTransition(explode);
                 ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(LoginActivity.this);
-                Intent i2 = new Intent(LoginActivity.this,MainActivity.class);
+                Intent i2 = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i2, oc2.toBundle());
             }
         });
@@ -81,5 +97,26 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         fab.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * 登录界面“使用其他社交帐号登录”按钮相关事件处理
+     *
+     * @param view
+     */
+    @OnClick({R.id.other_account_login_textview, R.id.qq_login_button, R.id.weixin_login_button})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.other_account_login_textview:
+                otherAccountLoginTextview.setVisibility(View.INVISIBLE);
+                otherLoginContext.setVisibility(View.VISIBLE);
+                break;
+            case R.id.qq_login_button:
+                ToastUtil.showShort(LoginActivity.this,"QQ登录");
+                break;
+            case R.id.weixin_login_button:
+                ToastUtil.showShort(LoginActivity.this,"微信登录");
+                break;
+        }
     }
 }

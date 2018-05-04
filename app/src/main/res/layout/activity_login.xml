@@ -101,7 +101,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:orientation="horizontal"
                     android:paddingEnd="30dp"
                     android:paddingStart="50dp">
@@ -125,10 +125,71 @@
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
 
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:alpha="0.8"
+
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/other_account_login_textview"
+                            android:layout_width="wrap_content"
+                            android:paddingTop="10dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/otheraccountlogin" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/other_login_context"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/qq_login_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/ic_qq" />
+
+                        <ImageView
+                            android:id="@+id/weixin_login_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_weixin" />
+                        <!--<TextView-->
+                        <!--android:id="@+id/other_account_login_textview"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:gravity="center"-->
+                        <!---->
+                        <!--android:text="@string/otheraccountlogin" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <Button
