@@ -45,6 +45,7 @@ import java.io.IOException;
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.base.BaseFragment;
 import wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.center.CenterFragment;
+import wuxiang.miku.scorpio.paperactivate.utils.RecognizeService;
 import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 
 public class OcrFragment extends BaseFragment {
@@ -84,12 +85,11 @@ public class OcrFragment extends BaseFragment {
         @Override
         public boolean onRequestPermission() {
             ActivityCompat.requestPermissions(getActivity(),
-                    new String[] {Manifest.permission.CAMERA},
+                    new String[]{Manifest.permission.CAMERA},
                     PERMISSIONS_REQUEST_CAMERA);
             return false;
         }
     };
-
 
 
     public static OcrFragment newInstance() {
@@ -107,7 +107,7 @@ public class OcrFragment extends BaseFragment {
 
     }
 
-    
+
     private void initView() {
         ToastUtil.showShort(getApplicationContext(), "ocrfragment initview");
 
@@ -140,8 +140,7 @@ public class OcrFragment extends BaseFragment {
 
         cameraView.setAutoPictureCallback(autoTakePictureCallback);
     }
-    
-    
+
 
     @Override
     public void onStart() {
@@ -258,6 +257,7 @@ public class OcrFragment extends BaseFragment {
         }
     }
 
+
     private View.OnClickListener albumButtonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -266,7 +266,7 @@ public class OcrFragment extends BaseFragment {
                     != PackageManager.PERMISSION_GRANTED) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     ActivityCompat.requestPermissions(getActivity(),
-                            new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                             PERMISSIONS_EXTERNAL_STORAGE);
                     return;
                 }
@@ -310,10 +310,9 @@ public class OcrFragment extends BaseFragment {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    Intent intent = new Intent();
+                    /*Intent intent = new Intent();
                     intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, contentType);
-                    getActivity().setResult(Activity.RESULT_OK, intent);
-//                    finish();
+                    getActivity().setResult(Activity.RESULT_OK, intent);*/
                 }
             });
         }
@@ -381,6 +380,7 @@ public class OcrFragment extends BaseFragment {
         doConfirmResult();
     }
 
+    //take then crop,finally do confirm
     private void doConfirmResult() {
         CameraThreadPool.execute(new Runnable() {
             @Override
@@ -390,16 +390,34 @@ public class OcrFragment extends BaseFragment {
                     Bitmap bitmap = ((BitmapDrawable) displayImageView.getDrawable()).getBitmap();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
                     fileOutputStream.close();
+                    Logger.d(outputFile.length() + '\n' + outputFile.getPath());
+                    RecognizeService.recGeneral(outputFile.getPath(), serviceListener);
+
+                    //reset camare
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            displayImageView.setImageBitmap(null);
+                            showTakePicture();
+                        }
+                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Intent intent = new Intent();
-                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, contentType);
-                getActivity().setResult(Activity.RESULT_OK, intent);
+//                Intent intent = new Intent();
+//                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, contentType);
+//                getActivity().setResult(Activity.RESULT_OK, intent);
 //                finish();
             }
         });
     }
+
+    private RecognizeService.ServiceListener serviceListener = new RecognizeService.ServiceListener() {
+        @Override
+        public void onResult(String result) {
+            Logger.d(result);
+        }
+    };
 
     private View.OnClickListener confirmButtonOnClickListener = new View.OnClickListener() {
         @Override
@@ -512,7 +530,6 @@ public class OcrFragment extends BaseFragment {
 
     /**
      * 做一些收尾工作
-     *
      */
     private void doClear() {
         CameraThreadPool.cancelAutoFocusTimer();
@@ -527,6 +544,6 @@ public class OcrFragment extends BaseFragment {
         super.onDestroy();
         this.doClear();
     }
-    
-    
+
+
 }
