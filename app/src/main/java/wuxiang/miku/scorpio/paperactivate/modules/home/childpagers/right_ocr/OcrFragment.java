@@ -36,6 +36,7 @@ import com.baidu.ocr.ui.camera.OCRCameraLayout;
 import com.baidu.ocr.ui.camera.PermissionCallback;
 import com.baidu.ocr.ui.crop.CropView;
 import com.baidu.ocr.ui.crop.FrameOverlayView;
+import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -91,8 +92,8 @@ public class OcrFragment extends BaseFragment {
 
 
 
-    public static CenterFragment newInstance() {
-        return new CenterFragment();
+    public static OcrFragment newInstance() {
+        return new OcrFragment();
     }
 
     @Override
@@ -103,11 +104,12 @@ public class OcrFragment extends BaseFragment {
     @Override
     public void finishCreateView(Bundle state) {
         initView();
+
     }
 
     
     private void initView() {
-        ToastUtil.showShort(getApplicationContext(), "activater fragment initview");
+        ToastUtil.showShort(getApplicationContext(), "ocrfragment initview");
 
         takePictureContainer = (OCRCameraLayout) getActivity().findViewById(com.baidu.ocr.ui.R.id.take_picture_container);
         confirmResultContainer = (OCRCameraLayout) getActivity().findViewById(com.baidu.ocr.ui.R.id.confirm_result_container);

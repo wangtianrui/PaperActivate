@@ -194,7 +194,7 @@ public class CameraView extends FrameLayout {
         this.maskType = maskType;
         boolean isNeedSetImage = true;
         switch (maskType) {
-            case MaskView.MASK_TYPE_ID_CARD_FRONT:
+            /*case MaskView.MASK_TYPE_ID_CARD_FRONT:
                 hintResourceId = R.drawable.bd_ocr_round_corner;
                 isNeedSetImage = false;
                 break;
@@ -204,7 +204,7 @@ public class CameraView extends FrameLayout {
                 break;
             case MaskView.MASK_TYPE_BANK_CARD:
                 hintResourceId = R.drawable.bd_ocr_hint_align_bank_card;
-                break;
+                break;*/
             case MaskView.MASK_TYPE_NONE:
             default:
                 maskView.setVisibility(INVISIBLE);

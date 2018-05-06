@@ -152,7 +152,7 @@ public class HomePageFragmet extends BaseFragment {
      */
     private void initViewPager() {
         HomePagerAdapter mHomeAdapter = new HomePagerAdapter(getChildFragmentManager(), getApplicationContext());
-        viewPager.setOffscreenPageLimit(1);
+        viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(mHomeAdapter);
         slidingTabs.setViewPager(viewPager);
         viewPager.setCurrentItem(1);

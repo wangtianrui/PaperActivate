@@ -104,10 +104,10 @@ public class OCRCameraLayout extends FrameLayout {
         if (r < b) {
             int contentHeight = width * 4 / 3;
             int heightLeft = height - contentHeight;
-            contentView.layout(l, t, r, contentHeight);
+            contentView.layout(l, t, r, b);
 
             backgroundRect.left = 0;
-            backgroundRect.top = contentHeight;
+            backgroundRect.top = contentHeight - 150;
             backgroundRect.right = width;
             backgroundRect.bottom = height;
 
