@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.center.CenterFragment;
+import wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.left_ar.BARFragment;
+import wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.right_ocr.OcrFragment;
 
 /**
  * Created by Wangtianrui on 2018/5/1.
@@ -27,13 +29,13 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
         if (fragments[position] == null) {
             switch (position) {
                 case 0:
-                    fragments[position] = CenterFragment.newInstance();
+                    fragments[position] = BARFragment.newInstance();
                     break;
                 case 1:
                     fragments[position] = CenterFragment.newInstance();
                     break;
                 case 2:
-                    fragments[position] = CenterFragment.newInstance();
+                    fragments[position] = OcrFragment.newInstance();
                     break;
                 default:
                     break;

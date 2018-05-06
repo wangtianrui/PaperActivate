@@ -58,4 +58,34 @@
     <dimen name="circle_margin_top">20dp</dimen>
     <dimen name="text_margin_top">40dp</dimen>
     <dimen name="circle_user_small_size">34dp</dimen>
+
+
+    <dimen name="bdar_camera_tip_margin_top">43dp</dimen>
+
+    <dimen name="bdar_voice_upscreen_loading_radius">12dp</dimen>
+    <dimen name="bdar_voice_tips_margin_left_right">36dp</dimen>
+    <dimen name="bdar_voice_tips_margin_bottom">150dp</dimen>
+    <dimen name="bdar_voice_wave_margin_bottom">76dp</dimen>
+    <dimen name="bdar_voice_circle_margin_bottom">56dp</dimen>
+    <dimen name="bdar_voice_tip_margin_bottom_landscape">84dp</dimen>
+    <dimen name="bdar_voice_wave_margin_bottom_landscape">10dp</dimen>
+    <dimen name="bdar_voice_wave_height">70dp</dimen>
+    <dimen name="bdar_voice_button_tip_margin_bottom">2dp</dimen>
+    <dimen name="bdar_voice_button_tip_margin_right">18dp</dimen>
+    <dimen name="bdar_voice_button_tip_margin_bottom_landscape">54dp</dimen>
+
+    <dimen name="bdar_hint_paddingBottom">10dp</dimen>
+    <dimen name="bdar_hint_paddingTop">10dp</dimen>
+    <dimen name="bdar_hint_paddingLeft">10dp</dimen>
+    <dimen name="bdar_hint_paddingRight">10dp</dimen>
+    <dimen name="bdar_dialog_padding">36dp</dimen>
+    <dimen name="bdar_dialog_text_padding">24dp</dimen>
+
+    <!-- capture相关 -->
+    <dimen name="bdar_capture_button_background_size">58dp</dimen>
+    <dimen name="bdar_capture_button_size">44dp</dimen>
+    <dimen name="bdar_capture_progressbar_size">59dp</dimen>
+
+    <dimen name="bdar_icon_margin_edge">15dp</dimen>
+    <dimen name="bdar_hint_margin_bottom">141dp</dimen>
 </resources>

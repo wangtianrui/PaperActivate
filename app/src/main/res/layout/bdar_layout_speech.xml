@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.baidu.ar.ui.rotateview.RotateViewGroup
+                android:id="@+id/bdar_id_voice_tips_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="@dimen/bdar_voice_tips_margin_bottom">
+
+            <TextView
+                    android:id="@+id/bdar_id_speech_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/bdar_voice_tips_margin_left_right"
+                    android:layout_marginRight="@dimen/bdar_voice_tips_margin_left_right"
+                    android:ellipsize="start"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="14dp"/>
+        </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+        <com.baidu.ar.ui.rotateview.RotateViewGroup
+                android:id="@+id/bdar_id_voice_wave_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="@dimen/bdar_voice_wave_margin_bottom">
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                <com.baidu.ar.ui.speech.SpeechWaveView
+                        android:id="@+id/bdar_id_voice_wave"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:visibility="gone"/>
+
+                <com.baidu.ar.ui.speech.SpeechCircleView
+                        android:id="@+id/bdar_id_voice_circle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"/>
+            </FrameLayout>
+        </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+    </FrameLayout>
+
+    <!-- 语音识别按钮 -->
+    <com.baidu.ar.ui.rotateview.RotateImageView
+            android:id="@+id/bdar_gui_record_audio"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="52dp"
+            android:layout_marginRight="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bdar_drawable_btn_close_record_audio_selector"
+            android:visibility="invisible"/>
+
+
+    <!-- 语音识别按钮提示文字横屏状态显示 -->
+    <com.baidu.ar.ui.rotateview.RotateViewGroup
+            android:id="@+id/bdar_gui_record_audio_rotate_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bdar_gui_record_audio"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/bdar_voice_button_tip_margin_bottom"
+            android:layout_marginRight="@dimen/bdar_voice_button_tip_margin_right"
+            android:visibility="invisible">
+
+        <TextView
+                android:id="@+id/bdar_record_audio_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bdar_drawable_bg_pop_right_bottom"
+                android:text="@string/bdar_click_to_stop_speak"
+                android:textColor="@color/bdar_plugin_white"/>
+    </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+</RelativeLayout>
