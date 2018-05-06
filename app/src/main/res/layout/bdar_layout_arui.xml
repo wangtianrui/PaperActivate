@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bdar_id_fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/bdar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.baidu.ar.ui.rotateview.RotateImageView
+        android:id="@+id/bdar_mask_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- 半透明渐变层 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bdar_shape_background_top" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bdar_shape_background_bottom" />
+    </RelativeLayout>
+
+    <!-- 透明层用于获取touch事件，隐藏case推荐 -->
+    <View
+        android:id="@+id/bdar_transparent_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- 返回按钮 -->
+    <com.baidu.ar.ui.rotateview.RotateImageView
+        android:id="@+id/bdar_titlebar_back"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/bdar_drawable_btn_back_selector" />
+
+    <!-- 摄像头切换 -->
+    <com.baidu.ar.ui.rotateview.RotateImageView
+        android:id="@+id/bdar_titlebar_camera"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/bdar_drawable_btn_camera_selector"
+        android:visibility="invisible" />
+
+    <!-- 闪光灯开关 -->
+    <com.baidu.ar.ui.rotateview.RotateImageView
+        android:id="@+id/bdar_titlebar_flash"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/bdar_drawable_btn_flash_disable_selector" />
+
+    <com.baidu.ar.ui.rotateview.RotateViewGroup
+        android:id="@+id/bdar_id_camera_switch_tips_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="43dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/bdar_id_camera_switch_tips"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="点击切换前置摄像头"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+    <!-- 加载提示界面 -->
+    <com.baidu.ar.ui.rotateview.RotateViewGroup
+        android:id="@+id/bdar_id_loading_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baidu.ar.ui.LoadingView
+            android:id="@+id/bdar_id_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+    <FrameLayout
+        android:id="@+id/bdar_id_plugin_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/bdar_id_night_mode_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bdar_night_mode_cover_color"
+        android:visibility="gone" />
+
+</FrameLayout>

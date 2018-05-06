@@ -62,5 +62,37 @@
     <color name="navigation_background_light">#FFF8F8F8</color>
     <color name="navigation_subtitle_primary_text">#FFFFFFFF</color>
     <color name="navigation_subtitle_secondary_text">#BFFFFFFF</color>
+    <color name="bdar_scanview_gradient_color_1">#002cccf8</color>
+    <color name="bdar_scanview_gradient_color_2">#002cccf8</color>
+    <color name="bdar_scanview_gradient_color_3">#002cccf8</color>
+    <color name="bdar_scanview_gradient_color_4">#662cccf8</color>
+    <color name="bdar_white">#ffffff</color>
+
+    <!-- dialog -->
+    <color name="bdar_dialog_bg">#ffffff</color>
+    <color name="bdar_dialog_title_text_color">#333333</color>
+    <color name="bdar_dialog_message_text_color">#666666</color>
+    <color name="bdar_dialog_btn_bg">#3c76ff</color>
+
+    <color name="bdar_plugin_white">#ffffff</color>
+
+    <!-- case推荐 -->
+    <color name="bdar_recommend_panel">#e0000000</color>
+    <color name="bdar_capture_progress">#d2563e</color>
+
+    <!-- dialog相关 -->
+    <color name="bdar_dialog_night_text">#999999</color>
+    <color name="bdar_dialog_night_bg">#1D1D1D</color>
+    <drawable name="bdar_dialog_night_drawable_bg">#1D1D1D</drawable>
+    <drawable name="bdar_dialog_night_drawable_bg_pressed">#2d2d2d</drawable>
+    <color name="bdar_dialog_blue_line">#308EF0</color>
+    <color name="bdar_dialog_gray_line">#333333</color>
+    <color name="bdar_dialog_content">#222222</color>
+    <color name="bdar_dialog_gray">#e0e0e0</color>
+    <drawable name="bdar_dialog_btn_bg_pressed_day">#f2f2f2</drawable>
+    <drawable name="bdar_dialog_btn_bg_pressed_night">#2a2a2d</drawable>
+    <!-- 夜间模式颜色值 -->
+    <color name="bdar_night_mode_cover_color">#80000000</color>
+    <color name="bdar_viewpager_item_text_selector">#e0e0e0e0</color>
 
 </resources>

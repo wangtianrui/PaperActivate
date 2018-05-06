@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.ar.ui.ScanView
+        android:id="@+id/bdar_gui_scan_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.baidu.ar.ui.rotateview.RotateViewGroup
+        android:id="@+id/bdar_gui_exception_tips_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/bdar_gui_excteption_tips_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bdar_plugin_drawable_shape_corner"
+            android:gravity="center"
+            android:paddingBottom="@dimen/bdar_hint_paddingBottom"
+            android:paddingLeft="@dimen/bdar_hint_paddingLeft"
+            android:paddingRight="@dimen/bdar_hint_paddingRight"
+            android:paddingTop="@dimen/bdar_hint_paddingTop"
+            android:textColor="@android:color/white"
+            android:textSize="14dp" />
+    </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+    <com.baidu.ar.ui.rotateview.RotateViewGroup
+        android:id="@+id/bdar_gui_tips_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="141dp"
+        android:background="@android:color/transparent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/bdar_gui_tips_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bdar_plugin_drawable_shape_corner"
+            android:gravity="center"
+            android:paddingBottom="@dimen/bdar_hint_paddingBottom"
+            android:paddingLeft="@dimen/bdar_hint_paddingLeft"
+            android:paddingRight="@dimen/bdar_hint_paddingRight"
+            android:paddingTop="@dimen/bdar_hint_paddingTop"
+            android:textColor="@android:color/white"
+            android:textSize="14dp" />
+    </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+    <!-- 触发图显示层 -->
+    <com.baidu.ar.ui.rotateview.RotateImageView
+        android:id="@+id/bdar_gui_image_trigger_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <include layout="@layout/bdar_layout_capture" />
+
+</FrameLayout>

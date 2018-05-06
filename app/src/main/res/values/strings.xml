@@ -10,5 +10,90 @@
     <string name="next">立即注册</string>
     <string name="register">注册</string>
     <string name="otheraccountlogin"><u>使用其他社交帐号登录</u></string>
+    <string name="bdar_loading">正在加载...</string>
+
+    <string name="bdar_blacklist_default_url">https://dusee.baidu.com/static/site/pages/intro/ar_help.html</string>
+
+    <string name="bdar_camera_switch_tip">点击切换前置摄像头</string>
+
+    <!--所有权限做dialog 权限相关-->
+    <string name="bdar_all_permission">权限申请</string>
+    <string name="bdar_all_description_for_android_m_above">没有权限进行下一步操作，请在设置中开启</string>
+    <string name="bdar_go_setting">前往设置</string>
+
+    <!--6.0 以下相机打开失败提示camera dialog 权限相关-->
+    <string name="bdar_open_camera_permission">开启相机权限</string>
+    <string name="bdar_open_camera_description_for_android_m_under">没有权限进行下一步操作，请在手机的“设置-权限管理”中开启</string>
+    <string name="bdar_got_it">我知道了</string>
+
+    <string name="bdar_got">知道了</string>
+    <string name="bdar_settings">设置</string>
+
+    <string name="bdar_click_to_stop_speak">按一下停止说话</string>
+    <string name="bdar_click_to_open_speak">按一下开始说话</string>
+    <string name="bdar_speech_wait">请稍后</string>
+    <string name="bdar_voice_listening">正在聆听中...</string>
+    <string name="bdar_speech_error_timeout">没听清，请重说</string>
+    <string name="bdar_speech_error_unknow">没听懂，请重说</string>
+    <string name="bdar_speech_error_network">网络不给力，请检查网络设置</string>
+    <string name="bdar_speech_error_premission">请打开麦克风权限</string>
+    <string name="bdar_speech_error_other">操作失败，请稍后再重试</string>
+    <string name="bdar_mic_read_error">麦克风读取失败</string>
+
+    <string name="bdar_capture_pic">拍摄</string>
+    <string name="bdar_capture_video">录制</string>
+    <string name="bdar_save_finish">已保存到相册</string>
+    <string name="bdar_save_fail">保存失败，该文件已被删除</string>
+    <string name="bdar_video_recording_too_short">录制过短，请重新录制</string>
+
+    <!-- case推荐 -->
+    <string name="bdar_recommend_view_more">查看更多案例</string>
+
+
+    <!-- sdk 版本过低提示 -->
+    <string name="bdar_sdk_version_low_title_for_box">更新提醒</string>
+    <string name="bdar_sdk_version_low_for_box">此功能需要最新版本%s</string>
+    <string name="bdar_sdk_version_update_btn">立即更新</string>
+    <string name="bdar_sdk_version_update_market_tips">请选择要查看的市场软件</string>
+
+    <!-- 网络错误提示框 -->
+    <string name="bdar_dialog_network_prompt_title">网络不给力</string>
+    <string name="bdar_error_network_tips">确定要继续等待吗？</string>
+    <string name="bdar_error_network_wait">继续等待</string>
+    <string name="bdar_error_network_retry_tips">确定要立即重试吗？</string>
+    <string name="bdar_error_network_retry">立即重试</string>
+
+    <!-- 下载超时提示框 -->
+    <string name="bdar_non_wifi_tips">正在非WIFI网络下体验\n 可能会产生流量费用</string>
+    <string name="bdar_dialog_prompt_title">提示</string>
+    <string name="bdar_download_timeout_error">网络不给力，确定要继续等待吗？</string>
+
+    <string name="bdar_record_error">录制失败</string>
+    <string name="bdar_record_completing">正在生成视频...</string>
+    <string name="bdar_video_saving">正在保存视频...</string>
+    <string name="bdar_upload_error">上传失败</string>
+    <string name="bdar_audio_permission_dialog_title">是否录制有声视频</string>
+    <string name="bdar_audio_permission_dialog_context">将获取您的麦克风权限，以便录制有声视频</string>
+
+    <string name="bdar_retry">重试</string>
+    <string name="bdar_ok">确定</string>
+    <string name="bdar_cancel">取消</string>
+
+    <string name="bdar_manage_storage">你可以在“设置”中管理存储空间</string>
+    <string name="bdar_storage_space_is_almost_full">存储空间几乎已满</string>
+
+    <!-- 解析资源失败 -->
+    <string name="bdar_error_unzip">资源解压失败</string>
+    <string name="bdar_error_json_parser">资源解析失败</string>
+    <string name="bdar_sdk_ar_track_target_not_finded">未找到扫描物，请重新对准</string>
+    <string name="bdar_click_to_rescan">点击这里重扫</string>
+    <string name="bdar_recg_error">出错啦</string>
+    <string name="bdar_not_recg_image">未识别到AR图片</string>
+
+    <string name="bdar_marketing_error_dialog_title">网络不给力</string>
+    <string name="bdar_marketing_error_dialog_context">确定要立即重试吗？</string>
+    <string name="bdar_marketing_error_dialog_cancel">退出</string>
+    <string name="bdar_marketing_error_dialog_again">立即重试</string>
+    <string name="bdar_marketing_connecting">正在连接...</string>
 
 </resources>

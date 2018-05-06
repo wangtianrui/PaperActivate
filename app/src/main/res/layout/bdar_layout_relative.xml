@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <com.baidu.ar.ui.rotateview.RotateViewGroup
+            android:id="@+id/bdar_gui_recommend_guide_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="102dp"
+            android:layout_marginLeft="16dp"
+            android:visibility="gone">
+        <TextView
+                android:id="@+id/bdar_gui_recommend_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bdar_drawable_bg_pop_left_bottom"
+                android:maxLines="1"
+                android:text="@string/bdar_recommend_view_more"
+                android:textColor="@color/bdar_plugin_white"/>
+    </com.baidu.ar.ui.rotateview.RotateViewGroup>
+
+    <com.baidu.ar.ui.rotateview.RotateImageView
+            android:id="@+id/bdar_ar_btn_relative"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="52dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/bdar_recommend_bg_enter"
+            android:padding="2dp"/>
+
+    <SlidingDrawer
+            android:id="@+id/bdar_ar_sliding_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:layout_gravity="bottom"
+            android:bottomOffset="30dp"
+            android:content="@+id/bdar_ar_btn_relative_layout"
+            android:handle="@+id/bdar_ar_btn_relative_close_handle"
+            android:orientation="vertical">
+
+        <!-- 抽屉把手 -->
+        <FrameLayout
+                android:id="@+id/bdar_ar_btn_relative_close_handle"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="vertical">
+            <ImageView
+                    android:id="@+id/bdar_ar_btn_relative_close"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bdar_recommend_panel"
+                    android:scaleType="center"
+                    android:src="@drawable/bdar_recommend_down"/>
+            <ImageView
+                    android:id="@+id/bdar_ar_btn_relative_close_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_gravity="bottom"
+                    android:background="#19ffffff"/>
+        </FrameLayout>
+
+        <LinearLayout
+                android:id="@+id/bdar_ar_btn_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:background="@color/bdar_recommend_panel"
+                android:orientation="vertical">
+
+            <GridView
+                    android:id="@+id/bdar_ar_relative_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="5"
+                    android:overScrollMode="never"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:scrollbarStyle="outsideOverlay"/>
+        </LinearLayout>
+    </SlidingDrawer>
+</FrameLayout>
