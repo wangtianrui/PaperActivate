@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/bdar_drawable_dialog_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/bdar_host_btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="9dp"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bdar_drawable_dialog_close" />
+
+        <TextView
+            android:id="@+id/bdar_host_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="消息提示"
+            android:textColor="@color/bdar_dialog_title_text_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/bdar_host_tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bdar_host_tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginTop="14dp"
+            android:lineSpacingExtra="5dp"
+            android:text="内容"
+            android:textColor="@color/bdar_dialog_message_text_color"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/bdar_host_btn_setting"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_below="@id/bdar_host_tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bdar_drawable_dialog_btn_bg"
+            android:text="去设置"
+            android:textColor="@color/bdar_white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/bdar_host_dialog_night_mask"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#80000000"
+        android:visibility="gone" />
+
+</RelativeLayout>

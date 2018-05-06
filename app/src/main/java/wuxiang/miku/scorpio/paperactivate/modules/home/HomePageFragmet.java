@@ -1,7 +1,9 @@
 package wuxiang.miku.scorpio.paperactivate.modules.home;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,6 +25,7 @@ import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.adapter.HomePagerAdapter;
 import wuxiang.miku.scorpio.paperactivate.base.BaseFragment;
 import wuxiang.miku.scorpio.paperactivate.modules.MainActivity;
+import wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.left_ar.ARActivity;
 import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 import wuxiang.miku.scorpio.paperactivate.widget.CircleImageView;
 import wuxiang.miku.scorpio.paperactivate.widget.NoScrollViewPager;
@@ -152,10 +155,31 @@ public class HomePageFragmet extends BaseFragment {
      */
     private void initViewPager() {
         HomePagerAdapter mHomeAdapter = new HomePagerAdapter(getChildFragmentManager(), getApplicationContext());
-        viewPager.setOffscreenPageLimit(1);
+        viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(mHomeAdapter);
         slidingTabs.setViewPager(viewPager);
         viewPager.setCurrentItem(1);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if(position==0){
+                    Intent intent = new Intent(getContext(), ARActivity.class);
+                    startActivity(intent);
+                    viewPager.setCurrentItem(1);
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     /**
@@ -165,4 +189,7 @@ public class HomePageFragmet extends BaseFragment {
         toolbarUserAvatar.setImageResource(R.drawable.user_avatar_test);
         navigationUserIdTextview.setText("ScorpioMiku");
     }
+
+
+
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <!-- 重扫 -->
+        <com.baidu.ar.ui.rotateview.RotateImageView
+                android:id="@+id/bdar_rescan"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="52dp"
+                android:scaleType="centerInside"
+                android:visibility="invisible"
+                android:src="@drawable/bdar_drawable_btn_replay_selector"/>
+
+
+        <!-- 重置引导提示 -->
+        <com.baidu.ar.ui.rotateview.RotateViewGroup
+                android:id="@+id/bdar_rescan_guide_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/bdar_rescan"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="16dp"
+                android:visibility="gone">
+            <TextView
+                    android:id="@+id/bdar_rescan_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bdar_drawable_bg_pop_left_bottom"
+                    android:textColor="@android:color/white"
+                    android:maxLines="1"
+                    android:text="重扫"/>
+        </com.baidu.ar.ui.rotateview.RotateViewGroup>
+    </RelativeLayout>
+</RelativeLayout>
