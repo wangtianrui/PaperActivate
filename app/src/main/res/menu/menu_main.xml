@@ -5,16 +5,16 @@
 
     <item
         android:id="@+id/id_action_download"
-        android:icon="@drawable/ic_file_download_black_24dp"
+        android:icon="@drawable/ic_toolbar_menu_download"
         android:orderInCategory="100"
         android:title="离线缓存"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/id_action_search"
         android:icon="@drawable/ic_toolbar_menu_search"
         android:orderInCategory="100"
         android:title="搜索"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 
 </menu>

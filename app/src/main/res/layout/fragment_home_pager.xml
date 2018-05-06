@@ -49,6 +49,7 @@
                         app:border_width="@dimen/circle_default_width" />
 
                     <TextView
+                        android:id="@+id/navigation_user_id_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/default_general_margin"

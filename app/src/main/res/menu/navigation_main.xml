@@ -8,11 +8,11 @@
             android:icon="@drawable/ic_home_black_24dp"
             android:title="主页" />
 
-        <item
-            android:id="@+id/item_vip"
-            android:checkable="false"
-            android:icon="@drawable/ic_nav_vip"
-            android:title="会员" />
+        <!--<item-->
+            <!--android:id="@+id/item_vip"-->
+            <!--android:checkable="false"-->
+            <!--android:icon="@drawable/ic_nav_vip"-->
+            <!--android:title="会员" />-->
 
         <item
             android:id="@+id/item_download"
@@ -36,13 +36,13 @@
         <item
             android:id="@+id/item_history"
             android:icon="@drawable/ic_history_black_24dp"
-            android:title="嘻嘻" />
+            android:title="历史记录" />
 
 
         <item
             android:id="@+id/item_group"
             android:icon="@drawable/ic_people_black_24dp"
-            android:title="哈哈" />
+            android:title="好友" />
         <item
             android:id="@+id/item_tracker"
             android:icon="@drawable/ic_account_balance_wallet_black_24dp"

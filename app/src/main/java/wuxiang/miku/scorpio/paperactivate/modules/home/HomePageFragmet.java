@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
@@ -44,6 +45,8 @@ public class HomePageFragmet extends BaseFragment {
     @BindView(R.id.search_view)
     MaterialSearchView searchView;
     Unbinder unbinder;
+    @BindView(R.id.navigation_user_id_textview)
+    TextView navigationUserIdTextview;
 
     @Override
     public int getLayoutResId() {
@@ -80,6 +83,21 @@ public class HomePageFragmet extends BaseFragment {
         }
     }
 
+    /**
+     * maker
+     *
+     * @return
+     */
+    public static HomePageFragmet newInstance() {
+        return new HomePageFragmet();
+    }
+
+    /**
+     * 初始化Menu
+     *
+     * @param menu
+     * @param inflater
+     */
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
@@ -93,13 +111,8 @@ public class HomePageFragmet extends BaseFragment {
         return searchView.isSearchOpen();
     }
 
-
     public void closeSearchView() {
         searchView.closeSearch();
-    }
-
-    public static HomePageFragmet newInstance() {
-        return new HomePageFragmet();
     }
 
 
@@ -109,7 +122,7 @@ public class HomePageFragmet extends BaseFragment {
     private void initToolbar() {
         toolbar.setTitle("");
         ((MainActivity) getActivity()).setSupportActionBar(toolbar);
-        toolbarUserAvatar.setImageResource(R.drawable.user_avatar_test);
+        initUserInformation();
     }
 
     /**
@@ -120,11 +133,10 @@ public class HomePageFragmet extends BaseFragment {
         searchView.setVoiceSearch(false);
         searchView.setCursorDrawable(R.drawable.custom_cursor);
         searchView.setEllipsize(true);
-        searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                ToastUtil.showShort(getSupportActivity(),query);
+                ToastUtil.showShort(getSupportActivity(), query);
                 return false;
             }
 
@@ -144,5 +156,13 @@ public class HomePageFragmet extends BaseFragment {
         viewPager.setAdapter(mHomeAdapter);
         slidingTabs.setViewPager(viewPager);
         viewPager.setCurrentItem(1);
+    }
+
+    /**
+     * 初始化用户信息(navigation里的)
+     */
+    private void initUserInformation() {
+        toolbarUserAvatar.setImageResource(R.drawable.user_avatar_test);
+        navigationUserIdTextview.setText("ScorpioMiku");
     }
 }

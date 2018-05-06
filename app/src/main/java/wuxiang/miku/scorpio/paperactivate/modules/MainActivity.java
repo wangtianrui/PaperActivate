@@ -9,6 +9,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatDelegate;
 import android.transition.Explode;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -22,6 +23,7 @@ import butterknife.BindView;
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.base.BaseActivity;
 import wuxiang.miku.scorpio.paperactivate.modules.home.HomePageFragmet;
+
 
 import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 import wuxiang.miku.scorpio.paperactivate.widget.CircleImageView;
@@ -53,12 +55,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void initViews(Bundle savedInstanceState) {
-//        Explode explode = new Explode();
-//        explode.setDuration(500);
-//        getWindow().setExitTransition(explode);
-//        getWindow().setEnterTransition(explode);
+
         initFragment();
         initNavigationView();
+
     }
 
     @Override
@@ -66,6 +66,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     }
 
+    /**
+     * navigation点击事件处理
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
@@ -87,6 +93,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         TextView mUserSign = (TextView) headerView.findViewById(R.id.user_other_info);
         ImageView mSwitchMode = (ImageView) headerView.findViewById(R.id.iv_head_switch_mode);
         //设置头像
+//        mSwitchMode.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                switchNightMode();
+//            }
+//        });
         mUserAvatarView.setImageResource(R.drawable.user_avatar_test);
         mUserName.setText("ScorpioMiku");
         mUserSign.setText("积分：900");
@@ -157,6 +169,24 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             finish();
         }
     }
+
+
+    /**
+     * 日夜间模式切换
+     */
+//    private void switchNightMode() {
+//        boolean isNight = PreferenceUtil.getBoolean(ConstantUtil.SWITCH_MODE_KEY, false);
+//        if (isNight) {
+//            // 日间模式
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//            PreferenceUtil.putBoolean(ConstantUtil.SWITCH_MODE_KEY, false);
+//        } else {
+//            // 夜间模式
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//            PreferenceUtil.putBoolean(ConstantUtil.SWITCH_MODE_KEY, true);
+//        }
+//        recreate();
+//    }
 
 
 }
