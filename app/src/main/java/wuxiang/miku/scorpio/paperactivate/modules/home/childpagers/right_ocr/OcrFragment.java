@@ -2,11 +2,13 @@ package wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.right_ocr;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -17,16 +19,17 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.baidu.idcardquality.IDcardQualityProcess;
-import com.baidu.idl.util.FileUtil;
-import com.baidu.ocr.ui.camera.CameraActivity;
 import com.baidu.ocr.ui.camera.CameraNativeHelper;
 import com.baidu.ocr.ui.camera.CameraThreadPool;
 import com.baidu.ocr.ui.camera.CameraView;
@@ -36,17 +39,18 @@ import com.baidu.ocr.ui.camera.OCRCameraLayout;
 import com.baidu.ocr.ui.camera.PermissionCallback;
 import com.baidu.ocr.ui.crop.CropView;
 import com.baidu.ocr.ui.crop.FrameOverlayView;
+import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.base.BaseFragment;
-import wuxiang.miku.scorpio.paperactivate.modules.home.childpagers.center.CenterFragment;
+import wuxiang.miku.scorpio.paperactivate.bean.OcrGenWords;
 import wuxiang.miku.scorpio.paperactivate.utils.RecognizeService;
-import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 
 public class OcrFragment extends BaseFragment {
     public static final String KEY_OUTPUT_FILE_PATH = "outputFilePath";
@@ -104,13 +108,10 @@ public class OcrFragment extends BaseFragment {
     @Override
     public void finishCreateView(Bundle state) {
         initView();
-
     }
 
 
     private void initView() {
-        ToastUtil.showShort(getApplicationContext(), "ocrfragment initview");
-
         takePictureContainer = (OCRCameraLayout) getActivity().findViewById(com.baidu.ocr.ui.R.id.take_picture_container);
         confirmResultContainer = (OCRCameraLayout) getActivity().findViewById(com.baidu.ocr.ui.R.id.confirm_result_container);
 
@@ -146,6 +147,12 @@ public class OcrFragment extends BaseFragment {
     public void onStart() {
         super.onStart();
         cameraView.start();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        cameraView.stop();
     }
 
     @Override
@@ -390,7 +397,7 @@ public class OcrFragment extends BaseFragment {
                     Bitmap bitmap = ((BitmapDrawable) displayImageView.getDrawable()).getBitmap();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
                     fileOutputStream.close();
-                    Logger.d(outputFile.length() + '\n' + outputFile.getPath());
+//                    Logger.d(outputFile.length() + '\n' + outputFile.getPath());
                     RecognizeService.recGeneral(outputFile.getPath(), serviceListener);
 
                     //reset camare
@@ -412,10 +419,20 @@ public class OcrFragment extends BaseFragment {
         });
     }
 
+    /**
+     * picture ocr recognize result listener
+     */
     private RecognizeService.ServiceListener serviceListener = new RecognizeService.ServiceListener() {
         @Override
-        public void onResult(String result) {
-            Logger.d(result);
+        public void onResult(String jsonResult) {
+            StringBuilder strResult = new StringBuilder();
+            List<OcrGenWords.WordsResultBean> wordsResults = new Gson().fromJson(jsonResult, OcrGenWords.class).getWords_result();
+            for (OcrGenWords.WordsResultBean wordsResultBean : wordsResults) {
+                strResult.append(wordsResultBean.getWords());
+            }
+
+            Logger.d(strResult.toString());
+            showNotebookDialog(strResult.toString());
         }
     };
 
@@ -527,6 +544,36 @@ public class OcrFragment extends BaseFragment {
                 break;
         }
     }
+
+    private void showNotebookDialog(String notebookStr) {
+
+        AlertDialog notebookDialog = new AlertDialog.Builder(getActivity())
+                .setTitle("笔记")
+                .setCancelable(false)
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getActivity(), "que ding", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .create();
+
+
+        EditText notebookText = new EditText(getActivity());
+        notebookText.setText(notebookStr);
+        notebookText.setTextSize(18);
+        notebookText.setTextColor(Color.GRAY);
+        notebookText.setGravity(Gravity.CENTER);
+        notebookDialog.setView(notebookText,20,10,20,10);
+        notebookDialog.show();
+    }
+
 
     /**
      * 做一些收尾工作

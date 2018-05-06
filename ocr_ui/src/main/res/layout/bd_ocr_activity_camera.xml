@@ -20,6 +20,8 @@
             android:visibility="gone"
             layout="@layout/bd_ocr_crop"/>
 
+
+
     <include
             android:id="@+id/confirm_result_container"
             layout="@layout/bd_ocr_confirm_result"
