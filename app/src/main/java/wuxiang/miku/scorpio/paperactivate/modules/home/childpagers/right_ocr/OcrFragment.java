@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.baidu.idcardquality.IDcardQualityProcess;
@@ -85,6 +86,7 @@ public class OcrFragment extends BaseFragment {
     private FrameOverlayView overlayView;
     private MaskView cropMaskView;
     private ImageView takePhotoBtn;
+    private ProgressBar mProgressBar;
     private PermissionCallback permissionCallback = new PermissionCallback() {
         @Override
         public boolean onRequestPermission() {
@@ -112,6 +114,8 @@ public class OcrFragment extends BaseFragment {
 
 
     private void initView() {
+        mProgressBar = getActivity().findViewById(R.id.ocr_pro_bar);
+
         takePictureContainer = (OCRCameraLayout) getActivity().findViewById(com.baidu.ocr.ui.R.id.take_picture_container);
         confirmResultContainer = (OCRCameraLayout) getActivity().findViewById(com.baidu.ocr.ui.R.id.confirm_result_container);
 
@@ -404,6 +408,7 @@ public class OcrFragment extends BaseFragment {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            mProgressBar.setVisibility(View.VISIBLE);
                             displayImageView.setImageBitmap(null);
                             showTakePicture();
                         }
@@ -411,10 +416,6 @@ public class OcrFragment extends BaseFragment {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-//                Intent intent = new Intent();
-//                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, contentType);
-//                getActivity().setResult(Activity.RESULT_OK, intent);
-//                finish();
             }
         });
     }
@@ -546,6 +547,13 @@ public class OcrFragment extends BaseFragment {
     }
 
     private void showNotebookDialog(String notebookStr) {
+        mProgressBar.setVisibility(View.GONE);
+
+        final EditText notebookText = new EditText(getActivity());
+        notebookText.setText(notebookStr);
+        notebookText.setTextSize(18);
+        notebookText.setTextColor(Color.GRAY);
+        notebookText.setGravity(Gravity.CENTER);
 
         AlertDialog notebookDialog = new AlertDialog.Builder(getActivity())
                 .setTitle("笔记")
@@ -559,17 +567,14 @@ public class OcrFragment extends BaseFragment {
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getActivity(), "que ding", Toast.LENGTH_SHORT).show();
+                        String edittedNotebook = notebookText.getText().toString();
+
                     }
                 })
                 .create();
 
 
-        EditText notebookText = new EditText(getActivity());
-        notebookText.setText(notebookStr);
-        notebookText.setTextSize(18);
-        notebookText.setTextColor(Color.GRAY);
-        notebookText.setGravity(Gravity.CENTER);
+
         notebookDialog.setView(notebookText,20,10,20,10);
         notebookDialog.show();
     }
