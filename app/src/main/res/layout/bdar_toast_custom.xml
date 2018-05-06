@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.baidu.ar.ui.rotateview.RotateViewGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bdar_toast_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/bdar_toast_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bdar_drawable_shape_corner"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"/>
+
+</com.baidu.ar.ui.rotateview.RotateViewGroup>
