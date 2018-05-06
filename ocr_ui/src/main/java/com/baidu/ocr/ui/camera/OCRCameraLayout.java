@@ -141,19 +141,19 @@ public class OCRCameraLayout extends FrameLayout {
             // layout centerView
             if (centerView != null) {
                 left = contentWidth + (widthLeft - centerView.getMeasuredWidth()) / 2;
-                top = (height - centerView.getMeasuredHeight()) / 2;
+                top = (height - centerView.getMeasuredHeight()) / 2 - 150;
                 centerView
                         .layout(left, top, left + centerView.getMeasuredWidth(), top + centerView.getMeasuredHeight());
             }
             // layout leftDownView
             left = contentWidth + (widthLeft - leftDownView.getMeasuredWidth()) / 2;
-            top = height - leftDownView.getMeasuredHeight() - leftDownViewLayoutParams.bottomMargin;
+            top = height - leftDownView.getMeasuredHeight() - leftDownViewLayoutParams.bottomMargin - 150;
             leftDownView
                     .layout(left, top, left + leftDownView.getMeasuredWidth(), top + leftDownView.getMeasuredHeight());
             // layout rightUpView
             left = contentWidth + (widthLeft - rightUpView.getMeasuredWidth()) / 2;
 
-            top = rightUpViewLayoutParams.topMargin;
+            top = rightUpViewLayoutParams.topMargin - 150;
             rightUpView.layout(left, top, left + rightUpView.getMeasuredWidth(), top + rightUpView.getMeasuredHeight());
         }
     }
