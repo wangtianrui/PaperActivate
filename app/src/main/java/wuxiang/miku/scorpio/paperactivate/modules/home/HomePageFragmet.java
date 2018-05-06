@@ -105,6 +105,7 @@ public class HomePageFragmet extends BaseFragment {
         //设置searchview
         MenuItem item = menu.findItem(R.id.id_action_search);
         searchView.setMenuItem(item);
+
     }
 
     public boolean isOpenSearchView() {
