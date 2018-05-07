@@ -576,9 +576,10 @@ public class OcrFragment extends BaseFragment {
                         if (BmobUser.getCurrentUser(getActivity()) != null) {
                             username = BmobUser.getCurrentUser(getActivity()).getUsername();
                         }
-                        new Note(edittedNotebook, username).update(getActivity(), new UpdateListener() {
+                        new Note(edittedNotebook, username).save(getActivity(), new SaveListener() {
                             @Override
                             public void onSuccess() {
+                                Logger.d("note book upload succeed!");
                                 Toast.makeText(getActivity(), "保存成功!", Toast.LENGTH_SHORT).show();
                             }
 
@@ -591,7 +592,6 @@ public class OcrFragment extends BaseFragment {
                     }
                 })
                 .create();
-
 
 
         notebookDialog.setView(notebookText,20,10,20,10);
