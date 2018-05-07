@@ -18,7 +18,6 @@ import wuxiang.miku.scorpio.paperactivate.base.BaseFragment;
  */
 
 public class BARFragment extends BaseFragment {
-    private CameraView cameraView;
 
     public static BARFragment newInstance() {
         return new BARFragment();
@@ -27,30 +26,26 @@ public class BARFragment extends BaseFragment {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.bd_ocr_activity_camera;
+        return R.layout.fragment_ar;
     }
 
     @Override
     public void finishCreateView(Bundle state) {
-        cameraView = (CameraView) getActivity().findViewById(com.baidu.ocr.ui.R.id.camera_view);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        cameraView.start();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        cameraView.stop();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        cameraView.stop();
     }
 
     @Override
