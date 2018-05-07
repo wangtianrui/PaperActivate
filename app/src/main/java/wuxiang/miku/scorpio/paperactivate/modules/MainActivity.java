@@ -74,7 +74,14 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
      */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        switch (item.getItemId()) {
+            case R.id.item_note:
+
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 
     @Override

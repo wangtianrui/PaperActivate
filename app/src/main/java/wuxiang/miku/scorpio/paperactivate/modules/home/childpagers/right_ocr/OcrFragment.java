@@ -48,8 +48,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UpdateListener;
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.base.BaseFragment;
+import wuxiang.miku.scorpio.paperactivate.bean.Note;
 import wuxiang.miku.scorpio.paperactivate.bean.OcrGenWords;
 import wuxiang.miku.scorpio.paperactivate.utils.RecognizeService;
 
@@ -568,6 +572,21 @@ public class OcrFragment extends BaseFragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String edittedNotebook = notebookText.getText().toString();
+                        String username = "123456";
+                        if (BmobUser.getCurrentUser(getActivity()) != null) {
+                            username = BmobUser.getCurrentUser(getActivity()).getUsername();
+                        }
+                        new Note(edittedNotebook, username).update(getActivity(), new UpdateListener() {
+                            @Override
+                            public void onSuccess() {
+                                Toast.makeText(getActivity(), "保存成功!", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFailure(int i, String s) {
+
+                            }
+                        });
 
                     }
                 })
