@@ -44,9 +44,9 @@
             android:icon="@drawable/ic_people_black_24dp"
             android:title="好友" />
         <item
-            android:id="@+id/item_tracker"
+            android:id="@+id/item_note"
             android:icon="@drawable/ic_account_balance_wallet_black_24dp"
-            android:title="测试" />
+            android:title="笔记" />
 
     </group>
 
