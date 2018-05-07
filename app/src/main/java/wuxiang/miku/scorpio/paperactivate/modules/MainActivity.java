@@ -1,5 +1,6 @@
 package wuxiang.miku.scorpio.paperactivate.modules;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
@@ -76,7 +77,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_note:
-
+                Intent intent = new Intent(this, NoteBookActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;

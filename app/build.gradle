@@ -52,6 +52,9 @@ dependencies {
     compile project(path: ':ocr_ui')
     implementation files('libs/dumixar.jar')
     implementation 'com.google.code.gson:gson:2.2.4'
+    //brvah
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
 }
 repositories {
     flatDir {

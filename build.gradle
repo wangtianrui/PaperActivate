@@ -24,6 +24,9 @@ allprojects {
         maven {
             url "https://oss.sonatype.org/content/repositories/snapshots"
         }
+        //brvah
+        maven { url "https://jitpack.io" }
+
     }
 }
 
