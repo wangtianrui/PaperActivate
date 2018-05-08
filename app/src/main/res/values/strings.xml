@@ -4,7 +4,7 @@
     <string name="login">登录</string>
     <string name="Username">帐号</string>
     <string name="Password">密码</string>
-    <string name="forgot_your_password">忘记密码?</string>
+    <string name="email">邮箱</string>
     <string name="go">GO</string>
     <string name="repeat_password">重复一遍密码</string>
     <string name="next">立即注册</string>

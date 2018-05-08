@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import cn.bmob.v3.BmobUser;
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.adapter.HomePagerAdapter;
 import wuxiang.miku.scorpio.paperactivate.base.BaseFragment;
@@ -168,7 +169,7 @@ public class HomePageFragmet extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
-                if(position==0){
+                if (position == 0) {
                     Intent intent = new Intent(getContext(), ARActivity.class);
                     startActivity(intent);
                     viewPager.setCurrentItem(1);
@@ -188,9 +189,9 @@ public class HomePageFragmet extends BaseFragment {
      */
     private void initUserInformation() {
         toolbarUserAvatar.setImageResource(R.drawable.user_avatar_test);
-        navigationUserIdTextview.setText("ScorpioMiku");
+        String username = BmobUser.getCurrentUser(getContext()).getUsername();
+        navigationUserIdTextview.setText(username);
     }
-
 
 
 }

@@ -22,7 +22,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         bind = ButterKnife.bind(this);
         initViews(savedInstanceState);
         initToolBar();
-
     }
 
 

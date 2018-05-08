@@ -125,9 +125,17 @@
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
 
+
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
+                    <ProgressBar
+                        android:id="@+id/login_wait_Pb"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_horizontal"
+                        android:visibility="gone" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -140,9 +148,9 @@
                         <TextView
                             android:id="@+id/other_account_login_textview"
                             android:layout_width="wrap_content"
-                            android:paddingTop="10dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:paddingTop="10dp"
                             android:text="@string/otheraccountlogin" />
                     </LinearLayout>
 
@@ -203,11 +211,12 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/forget_passwd_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
-                    android:text="@string/forgot_your_password"
+                    android:text="修改密码"
                     android:textColor="#9a9a9a"
                     android:textSize="12sp" />
             </LinearLayout>

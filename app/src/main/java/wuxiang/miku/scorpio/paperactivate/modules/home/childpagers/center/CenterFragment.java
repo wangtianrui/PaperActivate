@@ -26,6 +26,5 @@ public class CenterFragment extends BaseFragment {
     }
 
     private void initView() {
-        ToastUtil.showShort(getApplicationContext(), "activater fragment initview");
     }
 }

@@ -10,6 +10,7 @@ import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.AccessToken;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import cn.bmob.v3.Bmob;
 import wuxiang.miku.scorpio.paperactivate.utils.Statics;
@@ -30,8 +31,10 @@ public class PaperActivate extends Application {
         DuMixARConfig.setAppId(Statics.BAIDUARAPPID);
         DuMixARConfig.setAPIKey(Statics.BAIDUARAPIKEY);
         DuMixARConfig.setSecretKey(Statics.BAIDUARSECRETKEY);
-
         mInstance = this;
+
+        //init Bugly
+        CrashReport.initCrashReport(getApplicationContext(),"d6844a1427",true);
 
         //init Logger
         Logger.addLogAdapter(new AndroidLogAdapter());
