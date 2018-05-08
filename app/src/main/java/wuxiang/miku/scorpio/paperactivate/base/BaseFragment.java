@@ -70,7 +70,6 @@ public abstract class BaseFragment extends Fragment {
 
     public FragmentActivity getSupportActivity() {
         return super.getActivity();
-
     }
 
 

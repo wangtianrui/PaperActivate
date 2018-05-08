@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
     <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -32,17 +33,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity android:name=".modules.MainActivity">
-
-        </activity>
-        <activity android:name=".modules.login_register.RegisterActivity">
-
-        </activity>
+        <activity android:name=".modules.MainActivity"></activity>
+        <activity android:name=".modules.login_register.RegisterActivity"></activity>
         <activity android:name=".modules.home.childpagers.left_ar.ARActivity" />
-
+        <activity android:name=".modules.NoteBookActivity"></activity>
+        <activity android:name=".modules.login_register.ForgetPasswdActivity" />
     </application>
 
 </manifest>

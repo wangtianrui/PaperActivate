@@ -217,7 +217,7 @@ public class CameraView extends FrameLayout {
             hintViewTextWrapper.setVisibility(INVISIBLE);
         }
 
-        if (maskType == MaskView.MASK_TYPE_ID_CARD_FRONT && isEnableScan) {
+        /*if (maskType == MaskView.MASK_TYPE_ID_CARD_FRONT && isEnableScan) {
             cameraControl.setDetectCallback(new ICameraControl.OnDetectPictureCallback() {
                 @Override
                 public int onDetect(byte[] data, int rotation) {
@@ -233,7 +233,7 @@ public class CameraView extends FrameLayout {
                     return detect(data, rotation);
                 }
             });
-        }
+        }*/
     }
 
     private int detect(byte[] data, final int rotation) {
@@ -469,7 +469,6 @@ public class CameraView extends FrameLayout {
         hintViewText.setTextColor(Color.WHITE);
         hintViewText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
         hintViewText.setText(getScanMessage(-1));
-
 
         addView(hintViewTextWrapper, lp);
     }

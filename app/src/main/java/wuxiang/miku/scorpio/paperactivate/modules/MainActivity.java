@@ -1,6 +1,6 @@
 package wuxiang.miku.scorpio.paperactivate.modules;
 
-import android.media.Image;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,8 +9,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatDelegate;
-import android.transition.Explode;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,11 +18,13 @@ import android.widget.TextView;
 
 
 import butterknife.BindView;
+import cn.bmob.v3.BmobUser;
 import wuxiang.miku.scorpio.paperactivate.R;
 import wuxiang.miku.scorpio.paperactivate.base.BaseActivity;
 import wuxiang.miku.scorpio.paperactivate.modules.home.HomePageFragmet;
 
 
+import wuxiang.miku.scorpio.paperactivate.modules.login_register.LoginActivity;
 import wuxiang.miku.scorpio.paperactivate.utils.ToastUtil;
 import wuxiang.miku.scorpio.paperactivate.widget.CircleImageView;
 
@@ -55,10 +55,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void initViews(Bundle savedInstanceState) {
-
         initFragment();
         initNavigationView();
-
     }
 
     @Override
@@ -74,7 +72,21 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
      */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        switch (item.getItemId()) {
+            case R.id.item_note:
+                Intent intent = new Intent(this, NoteBookActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.item_exit:
+                //删除本地登录缓存
+                BmobUser.logOut(this);
+                Intent intent1 = new Intent(this, LoginActivity.class);
+                startActivity(intent1);
+                this.finish();
+            default:
+                break;
+        }
+        return true;
     }
 
     @Override
@@ -86,6 +98,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
      * 左侧NavigationView初始化
      */
     private void initNavigationView() {
+        String username = BmobUser.getCurrentUser(MainActivity.this).getUsername();
         navigationView.setNavigationItemSelectedListener(this);
         View headerView = navigationView.getHeaderView(0);
         CircleImageView mUserAvatarView = (CircleImageView) headerView.findViewById(R.id.user_avatar_view);
@@ -100,9 +113,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 //            }
 //        });
         mUserAvatarView.setImageResource(R.drawable.user_avatar_test);
-        mUserName.setText("ScorpioMiku");
-        mUserSign.setText("积分：900");
-        //设置日夜间模式切换
+        mUserName.setText(username);
 
     }
 
